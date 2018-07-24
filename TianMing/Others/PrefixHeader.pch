@@ -1,0 +1,115 @@
+//
+//  PrefixHeader.pch
+//  TianCheng
+//
+//  Created by 李智帅 on 17/1/17.
+//  Copyright © 2017年 李智帅. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#ifdef __OBJC__
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+//一. 全局的头文件
+#import "AFNetworking.h"//网络请求
+#import "UIImageView+WebCache.h"//给Imageview加图片
+#import "SDCycleScrollView.h"
+#import "SDImageCache.h"
+#import "FactoryUI.h"
+#import "iToast.h"
+#import "HttpRequest.h"//森哥
+#import "MJExtension.h"
+#import "MJRefresh.h"//刷新
+#import "Masonry.h"
+#import "UIView+SCFrame.h"
+#define SCREEN_W [UIScreen mainScreen].bounds.size.width
+#define SCREEN_H ([UIScreen mainScreen].bounds.size.height-64)
+#define kWindowW [UIScreen mainScreen].bounds.size.width
+#define kWindowH [UIScreen mainScreen].bounds.size.height
+#define MAINCOLOR [UIColor colorWithRed:0.93 green:0.93 blue:0.93 alpha:1];
+#define isNull(x)             (!x || [x isKindOfClass:[NSNull class]])
+#define Tel [[NSUserDefaults standardUserDefaults]objectForKey:@"tel"]
+//#define MAINCOLOR [UIColor blackColor]
+#define Font(x) [UIFont systemFontOfSize:x]
+#define WC [UIColor whiteColor]
+#define SCREEN_B [UIScreen mainScreen].bounds
+//提示语 Toast
+#define Toast(msg) [[[iToast makeText:(msg)] setGravity:iToastGravityCenter]                      show]
+//wekself 防止死循环
+#define WeakSelf __weak typeof(self) weakSelf = self;
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+//接口
+#define BaseURL @""
+// 4e1iK9tvdhyVQSuDIlD5LnnsbxS7SOLr
+#define BaiduAK @"IxOMnba4dhpGnxjFjyy7UcTxzfeFtDsB"
+#define TestBaseURL @"http://192.168.1.225:8080/tcwl-api-server/v1"
+//详细接口
+//智运 http://10.0.0.18:8080/zhiyun-api-server/v1
+//#define kUrlBase    @"http://10.0.0.18:8080/zhiyun-api-server/v1"
+//正式 111.160.122.230 111.160.122.226
+//#define kUrlBase    @"//智运测试
+#define kUrlBase    @"http://www.rczhiyun.com/zhiyun-api-server/v1"
+//#define kUrlBase    @"http://39.105.154.245/zhiyun-api-server/v1"
+//#define kUrlBase    @"http://www.tiancheng100y.com/tcwl-api-server/v1"
+//#define kUrlBase @"http://47.93.116.114:8080/tcwl-api-server/v1"
+
+
+//图片Base
+//#define ImageBase @"http://www.tiancheng100y.com/tcwl-image-server/v1"
+//智运
+//#define ImageBase @"http://10.0.0.18:8080/zhiyun-image-server/v1"
+//正式图片 111.160.122.230 111.160.122.226
+#define ImageBase @"http://www.rczhiyun.com/zhiyun-image-server/v1"
+//#define ImageBase @"http://39.105.154.245/zhiyun-image-server/v1"
+//我的订单
+#define kOrderList    kUrlBase@"/orderRest/selectOrder"
+//我的发布
+#define kPublishList    kUrlBase@"/demand/find"
+//首页
+#define HomeUrl    kUrlBase@"/orderRest/selectOrderDetails"
+//运单详情
+#define kTransportDetail    kUrlBase@"/orderRest/selectOrderDetails"
+//详细接口
+//1登录
+#define Login kUrlBase@"/msg/sms/sendMsg"
+#define Register kUrlBase@"/car/login"
+//个人中心
+#define User kUrlBase@"/user/role"
+#define GetGoods kUrlBase@"/orderRest/startOrOverOrderDetail"
+//1
+//运单详情地图
+//#define kTransportDetailMap    kUrlBase@"/location/EntityPoints"
+#define kTransportDetailMap    kUrlBase@"/location/EntityPointsByTag"
+#define UploadURL kUrlBase@"/orderRest/voucher"
+
+
+#define SeletedPhoto3 ImageBase@"/image/upload"
+#define QuitURL kUrlBase@"/car/logout"
+#define STOREAPPID @"1396347484"
+//225服务器
+//#define SeletedPhoto3 @"/image/upload"
+//2
+//18首页轮播 get
+#define HomeBanner kUrlBase@"/advert/content/list/"
+
+//金融服务
+#define FinancialService kUrlBase@"/insurance/create"
+//4
+
+//5
+
+//6
+
+//7
+
+//8
+
+//9
+
+#endif
+#endif /* PrefixHeader_pch */
