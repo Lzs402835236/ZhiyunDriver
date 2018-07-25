@@ -91,7 +91,7 @@
 #define SeletedPhoto3 ImageBase@"/image/upload"
 #define QuitURL kUrlBase@"/car/logout"
 #define STOREAPPID @"1396347484"
-//225服务器
+//225服务器 
 //#define SeletedPhoto3 @"/image/upload"
 //2
 //18首页轮播 get
